@@ -1,0 +1,17 @@
+.comparsion {
+    display: flex;
+    flex-direction: column;
+    /* align-content: stretch; */
+    /* align-items: stretch; */
+    /* justify-content: center; */
+    width: 80vh;
+    margin-left: 10vw;
+    margin-right: auto;
+    margin-top: 5vh;
+    background-color: blanchedalmond;
+    height: 60vh;
+    padding: 2em;
+    
+
+
+}

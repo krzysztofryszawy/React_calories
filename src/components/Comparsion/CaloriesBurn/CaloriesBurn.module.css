@@ -1,0 +1,5 @@
+.caloriesBurn {
+    background-color: pink;
+    /* width: 100%; */
+    flex-grow: 1;
+}
