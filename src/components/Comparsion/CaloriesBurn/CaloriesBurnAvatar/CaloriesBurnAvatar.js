@@ -10,17 +10,20 @@ const styles = theme => ({
     },
   });
 
-const caloriesIntakeAvatar = (props) => {
+const caloriesBurnAvatar = (props) => {
     return (
         <Chip
             avatar={<Avatar>{props.icon}</Avatar>}
             label={props.name}
             onDelete={() => props.click(props.uniqueName)}
             className={props.classes.chip}
-            color="secondary"
+            color="primary"
         />
+
+        
+    
         
     )
 }
 
-export default withStyles(styles)(caloriesIntakeAvatar)
+export default withStyles(styles)(caloriesBurnAvatar)

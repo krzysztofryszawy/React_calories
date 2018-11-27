@@ -6,22 +6,26 @@ import BurnItem from './BurnItem/BurnItem'
 
 const panel = (props) => {
     
-    const intakeItemsContent = props.intakeItems.map(singleIntakeItem => 
+    const intakeItemsContent = props.intakeItems.map((singleIntakeItem, mapIndex) => 
             <IntakeItem
-                key={singleIntakeItem.name}
+                key={singleIntakeItem.name+mapIndex}
                 name={singleIntakeItem.name}
                 calories={singleIntakeItem.calories}
                 description={singleIntakeItem.description}
-                click={(name, calories) => props.clickIntakeItem(name, calories)}
+                icon={singleIntakeItem.icon}
+                click={(name, calories, uniqueName) => props.clickIntakeItem(name, calories, uniqueName)}
                 />
     )
-    const burnItemsContent = props.burnItems.map(singleBurnItem => 
+    const burnItemsContent = props.burnItems.map((singleBurnItem, mapIndex) => 
             <BurnItem
-                key={singleBurnItem.name}
+                key={singleBurnItem.name+mapIndex}
                 name={singleBurnItem.name}
                 calories={singleBurnItem.calories}
                 description={singleBurnItem.description}
-            />
+                icon={singleBurnItem.icon}
+                uniqueName={singleBurnItem.name+Date.now()}
+                click={(name, calories, uniqueName) => props.clickBurnItem(name, calories, uniqueName)}
+                />
     )
 
     return (

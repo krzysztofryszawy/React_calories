@@ -26,13 +26,18 @@ class comparsion extends Component {
 
 
         return (
-            <div className={styles['comparsion']}>
+            <React.Fragment>
                 <button onClick={this.growHandler}>GROW</button>
-                <CaloriesBurn/>
-                <CaloriesIntake
-                    grow={this.state.grow}
-                    intakeItemsToShow={this.props.intakeItemsToShow}/>
-            </div>
+                <div className={styles['comparsion']}>                
+                    <CaloriesBurn
+                        burnItemsToShow={this.props.burnItemsToShow}
+                        clickShowedBurnItem={this.props.clickShowedBurnItem}/>
+                    <CaloriesIntake
+                        grow={this.state.grow}
+                        intakeItemsToShow={this.props.intakeItemsToShow}
+                        clickShowedIntakeItem={this.props.clickShowedIntakeItem}/>
+                </div>
+            </React.Fragment>
         )   
     }
 

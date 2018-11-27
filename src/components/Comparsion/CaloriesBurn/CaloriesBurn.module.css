@@ -1,5 +1,10 @@
 .caloriesBurn {
-    background-color: pink;
+    background-color: lightblue;
     /* width: 100%; */
     flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    /* align-content: space-between; */
+    align-items:center;
+    justify-content: center;
 }
