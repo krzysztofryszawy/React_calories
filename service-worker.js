@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/krzysztofryszawy/React_calories/precache-manifest.e7536f52865c78a8cc38543267e33afa.js"
+  "/React_calories/precache-manifest.e471979f1c384bdaf872dba1021d945b.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/krzysztofryszawy/React_calories/index.html", {
+workbox.routing.registerNavigationRoute("/React_calories/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
