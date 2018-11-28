@@ -37,7 +37,7 @@ class App extends Component {
       burnItemsToShow:[],
       caloriesIntakeSum: 0,
       caloriesBurnSum: 0,
-      verdict: '[*TIP] Go ahead, eat some snack 🍩 clicking ADD below'
+      verdict: '[*TIP] Go ahead, eat some snack 🍩 by clicking ADD below'
   }
 
   
