@@ -1,10 +1,32 @@
 import React from 'react'
-// import styles from './CaloriesIntake.module.css'
-import styles from './Panel.module.css'
+// import Grid from '@material-ui/core/Grid';
+// import styles from './Panel.module.css'
+import { withStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+
 import IntakeItem from './IntakeItem/IntakeItem'
 import BurnItem from './BurnItem/BurnItem'
+import Paper from '@material-ui/core/Paper';
+
+const styles = theme => ({
+    root: {
+      flexGrow: 1,
+    },
+    paper: {
+      padding: theme.spacing.unit * .5,
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
+      margin: theme.spacing.unit,
+    },
+    panel: {
+        display: 'flex',
+        alignItems: 'stretch',
+        flexDirection: 'row',
+    }
+  });
 
 const panel = (props) => {
+    
     
     const intakeItemsContent = props.intakeItems.map((singleIntakeItem, mapIndex) => 
             <IntakeItem
@@ -13,6 +35,7 @@ const panel = (props) => {
                 calories={singleIntakeItem.calories}
                 description={singleIntakeItem.description}
                 icon={singleIntakeItem.icon}
+                img={singleIntakeItem.img}
                 click={(name, calories, uniqueName) => props.clickIntakeItem(name, calories, uniqueName)}
                 />
     )
@@ -24,18 +47,29 @@ const panel = (props) => {
                 description={singleBurnItem.description}
                 icon={singleBurnItem.icon}
                 uniqueName={singleBurnItem.name+Date.now()}
+                img={singleBurnItem.img}
                 click={(name, calories, uniqueName) => props.clickBurnItem(name, calories, uniqueName)}
                 />
     )
-
     return (
-        <div className={styles['panel']}>
-            <div><h3>INTAKE ITEMS</h3>{intakeItemsContent}</div>
-            <div><h3>BURN ITEMS</h3>{burnItemsContent}</div>
-        </div>
+        
+        <div className={props.classes.panel}>
+            <Paper className={props.classes.paper}>
+                <Typography color='secondary'  variant="h5" >
+                    TOTAL FOOD: {props.caloriesIntakeSum} kcal
+                </Typography>                
+                <div style={{display: 'flex', flexFlow: 'row', flexWrap: 'wrap', justifyContent: 'center'}}>{intakeItemsContent}</div>
+            </Paper>
+            <Paper className={props.classes.paper}>
+                <Typography color='primary'  variant="h5" >
+                    TOTAL ACTIVITY: {props.caloriesBurnSum} kcal
+                </Typography>
+                <div style={{display: 'flex', flexFlow: 'row', flexWrap: 'wrap', justifyContent: 'center'}}>{burnItemsContent}</div>
+            </Paper>
+        </div >
     
         
     )
 }
 
-export default panel
+export default withStyles(styles)(panel)

@@ -15,7 +15,7 @@ const caloriesIntakeAvatar = (props) => {
         <Chip
             avatar={<Avatar>{props.icon}</Avatar>}
             label={props.name}
-            onDelete={() => props.click(props.uniqueName)}
+            onDelete={() => props.click(props.uniqueName, props.calories)}
             className={props.classes.chip}
             color="secondary"
         />

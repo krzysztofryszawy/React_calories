@@ -1,12 +1,12 @@
 .caloriesIntake {
-    background-color: pink;
-    /* width: 100%; */
-    /* height: 50%; */
-    flex-grow: 1;
-    transition: all ease-in-out 1s;
+    background-color: rgb(255, 245, 248);
     display: flex;
     flex-wrap: wrap;
-    /* align-content: space-between; */
     align-items:center;
     justify-content: center;
+    flex-grow: 1;
+    transition: all ease-in-out 1s;
+    /* height: 450px; */
+    /* width: 100%; */
+    /* align-content: space-between; */
 }

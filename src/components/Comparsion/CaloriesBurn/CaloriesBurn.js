@@ -4,6 +4,8 @@ import CaloriesBurnAvatar from './CaloriesBurnAvatar/CaloriesBurnAvatar'
 
 const caloriesBurn = (props) => {
 
+    if (props.burnItemsToShow.length==0) {return<div className={styles['caloriesBurn']}>Choose some excersices 🏓 below ⬇ </div>}
+
     const burnAvatarContent = props.burnItemsToShow.map((singleItem, mapIndex) => 
         <CaloriesBurnAvatar
             key={singleItem.name+mapIndex}
@@ -12,7 +14,7 @@ const caloriesBurn = (props) => {
             description={singleItem.description}
             icon={singleItem.icon}
             uniqueName={singleItem.uniqueName}
-            click={(uniqueName) => props.clickShowedBurnItem(uniqueName)}
+            click={(uniqueName, calories) => props.clickShowedBurnItem(uniqueName, calories)}
             />
     )
 

@@ -16,28 +16,60 @@ class App extends Component {
 
   state = {
     intakeItems: [
-      {name: 'breakfast',calories: 750,description: '200g classic breakfast',icon: '🥐',img: 'breakfast'},
-      {name: 'coffee', calories: 200,description: '250ml coffee with milk & sugar',icon: '☕',img: 'coffee'},
-      {name: 'snack',calories: 100,description: '100g favorite snack',icon: '🍰',img: 'snack'},
-      {name: 'apple',calories: 50,description: '1 juicy apple',icon: '🍏',img: 'apple'},
-      {name: 'lunch',calories: 788,description: '300g classic lunch',icon: '🥗',img: 'lunch'},
-      {name: 'banana',calories: 100,description: '1 average banana',icon: '🍌',img: 'banana'},
-      {name: 'hotdog',calories: 100,description: '1 looking good hotdog',icon: '🌭',img: 'hotdog'},
-      {name: 'dinner',calories: 788,description: '300g classic dinner',icon: '🍲',img: 'dinner'},],
+      {name: 'breakfast',
+      calories: 400,
+      description: '200g classic breakfast',
+      icon: '🍳',
+      img: 'breakfast'
+      },
+      {name: 'lunch',
+      calories: 500,
+      description: '300g classic lunch',
+      icon: '🍲',
+      img: 'lunch'
+      },
+      {name: 'banana',
+      calories: 100,
+      description: '1 average banana',
+      icon: '🍌',
+      img: 'banana'
+      },
+      {name: 'coffee',
+      calories: 200,
+      description: '250ml coffee with milk & sugar',
+      icon: '☕',
+      img: 'coffee'
+      }],
     burnItems: [
-      {name: 'work',calories: 800,description: '8h office job',icon: '👨‍🏫',img: 'work'},
-      {name: 'walking',calories: 267,description: '1h walking',icon: '👟',img: 'walking'},
-      {name: 'dogtrekking',calories: 267,description: '1h dogtrekking',icon: '🐩',img: 'dogtrekking'},
-      {name: 'gaming',calories: 81,description: '1h playing videogame (hard-lever)',icon: '🎮',img: 'gaming'},
-      {name: 'jogging',calories: 773,description: '1h jogging',icon: '🤸‍',img: 'jogging'},
-      {name: 'biking',calories: 596,description: '1h riding bike',icon: '🚴‍',img: 'biking'},
-      {name: 'football',calories: 494,description: '1h hard football game',icon: '⚽',img: 'football'},
-      {name: 'swimming',calories: 492,description: '1h swiming game',icon: '🏊‍',img: 'swimming'}],
+      {name: 'work',
+      calories: 400,
+      description: '8h office job',
+      icon: '👨‍🏫',
+      img: 'work'
+      },
+      {name: 'biking',
+      calories: 200,
+      description: '1h riding bike',
+      icon: '🚴‍',
+      img: 'biking'
+      },
+      {name: 'football',
+      calories: 250,
+      description: '1h hard football game',
+      icon: '⚽',
+      img: 'football'
+      },
+      {name: 'jogging',
+      calories: 200,
+      description: '1h jogging',
+      icon: '🤸‍',
+      img: 'jogging'
+      }],
       intakeItemsToShow: [],
       burnItemsToShow:[],
       caloriesIntakeSum: 0,
       caloriesBurnSum: 0,
-      verdict: '[*TIP] Go ahead, eat some snack 🍩 clicking ADD below'
+      verdict: 'Go ahead, eat some cookie 🍩'
   }
 
   
@@ -135,9 +167,9 @@ class App extends Component {
       return
     }
     if (this.state.caloriesIntakeSum > this.state.caloriesBurnSum) {
-      this.setState({verdict: `you ate ${this.state.caloriesIntakeSum-this.state.caloriesBurnSum}kCal too many. Consider some activity 🏸`})
+      this.setState({verdict: `zjadles za duzo o ${this.state.caloriesIntakeSum-this.state.caloriesBurnSum}kCal. Rozważ jakąś aktywność ⛹‍`})
       } else if (this.state.caloriesIntakeSum < this.state.caloriesBurnSum) {
-        this.setState({verdict: `you ate ${this.state.caloriesBurnSum-this.state.caloriesIntakeSum}kCal too few! Refill deficit 🌭`})
+        this.setState({verdict: `zjadles za mało o ${this.state.caloriesBurnSum-this.state.caloriesIntakeSum}kCal! Uzupełnij deficyt 🌭`})
         } else 
           this.setState({verdict: 'Perfect! Go ahead, eat some cookie 🍩'})
   }

@@ -4,6 +4,8 @@ import CaloriesIntakeAvatar from './CaloriesIntakeAvatar/CaloriesIntakeAvatar'
 
 const caloriesIntake = (props) => {
     
+    if (props.intakeItemsToShow.length==0) {return<div className={styles['caloriesIntake']}>Go get some food 🍕 below ⬇ </div>}
+    
     const intakeAvatarContent = props.intakeItemsToShow.map((singleItem, mapIndex) => 
         <CaloriesIntakeAvatar
             key={singleItem.name+mapIndex}
@@ -12,14 +14,14 @@ const caloriesIntake = (props) => {
             description={singleItem.description}
             icon={singleItem.icon}
             uniqueName={singleItem.uniqueName}
-            click={(uniqueName) => props.clickShowedIntakeItem(uniqueName)}
+            click={(uniqueName, calories) => props.clickShowedIntakeItem(uniqueName, calories)}
             />
     )
 
     
     
     return (
-        <div style={{flexGrow: props.grow}} className={styles['caloriesIntake']}>
+        <div className={styles['caloriesIntake']}>
         {intakeAvatarContent}
         </div>
     )
