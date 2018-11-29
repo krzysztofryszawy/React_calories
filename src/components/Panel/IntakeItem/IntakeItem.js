@@ -7,7 +7,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
 
 
 const styles = {
@@ -45,7 +44,7 @@ const intakeItem = (props) => {
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <Button onClick={ () => props.click(props.name, props.calories, props.uniqueName)} variant="contained" size="small" color="secondary">
+                    <Button onClick={ () => props.click(props.name, props.calories, props.uniqueName)} variant="contained" size="small" color="primary">
                         ADD
                     </Button>
                 </CardActions>

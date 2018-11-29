@@ -55,13 +55,13 @@ const panel = (props) => {
         
         <div className={props.classes.panel}>
             <Paper className={props.classes.paper}>
-                <Typography color='secondary'  variant="h5" >
+                <Typography variant="h5" >
                     TOTAL FOOD: {props.caloriesIntakeSum} kcal
                 </Typography>                
                 <div style={{display: 'flex', flexFlow: 'row', flexWrap: 'wrap', justifyContent: 'center'}}>{intakeItemsContent}</div>
             </Paper>
             <Paper className={props.classes.paper}>
-                <Typography color='primary'  variant="h5" >
+                <Typography variant="h5" >
                     TOTAL ACTIVITY: {props.caloriesBurnSum} kcal
                 </Typography>
                 <div style={{display: 'flex', flexFlow: 'row', flexWrap: 'wrap', justifyContent: 'center'}}>{burnItemsContent}</div>

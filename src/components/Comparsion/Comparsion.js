@@ -26,6 +26,7 @@ const styles = theme => ({
         display: 'flex',
         flexDirection: 'row',
         minHeight: '10vh',
+        border: '1px dashed gray'
     }
   });
 
@@ -38,6 +39,11 @@ class comparsion extends Component {
 
         return (
             <Paper className={this.props.classes.paper}>
+                <div style={{margin: '1em'}}>
+                    <Typography  variant="h4" component="h4">
+                        {this.props.verdict}
+                    </Typography>
+                </div>
                 <div className={this.props.classes.comparsion}>                
                     <CaloriesIntake
                         intakeItemsToShow={this.props.intakeItemsToShow}
@@ -46,11 +52,6 @@ class comparsion extends Component {
                         burnItemsToShow={this.props.burnItemsToShow}
                         clickShowedBurnItem={this.props.clickShowedBurnItem}/>
                 </div>
-                <Paper className={this.props.classes.paper}>
-                    <Typography gutterBottom variant="h4" component="h4">
-                        {this.props.verdict}
-                    </Typography>
-                </Paper>
             </Paper>
         )   
     }

@@ -4,7 +4,7 @@ import CaloriesIntakeAvatar from './CaloriesIntakeAvatar/CaloriesIntakeAvatar'
 
 const caloriesIntake = (props) => {
     
-    if (props.intakeItemsToShow.length==0) {return<div className={styles['caloriesIntake']}>Go get some food 🍕 below ⬇ </div>}
+    if (props.intakeItemsToShow.length===0) {return<div className={styles['caloriesIntake']}>Go get some food <span role="img" aria-label="Slice of Pizza">🍕</span> below ⬇ </div>}
     
     const intakeAvatarContent = props.intakeItemsToShow.map((singleItem, mapIndex) => 
         <CaloriesIntakeAvatar

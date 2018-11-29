@@ -26,14 +26,13 @@ const navBar = (props) => {
         <div className={props.classes.root}>
             <AppBar position="static">
                 <Toolbar>
-
                     <IconButton className={props.classes.menuButton} color="inherit" aria-label="Menu">
                         <MenuIcon />
                     </IconButton>
                     <Typography className={props.classes.grow} variant="h6" color="inherit" >
-                        CaloriesApp
+                        CaloriesApp (alpha)
                     </Typography>
-                    <Button color="inherit">Login</Button>
+                    <Button onClick={() => props.clickClear()} color="inherit">START AGAIN</Button>
                 </Toolbar>
             </AppBar>
         </div>

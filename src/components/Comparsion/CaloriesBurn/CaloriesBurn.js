@@ -4,7 +4,7 @@ import CaloriesBurnAvatar from './CaloriesBurnAvatar/CaloriesBurnAvatar'
 
 const caloriesBurn = (props) => {
 
-    if (props.burnItemsToShow.length==0) {return<div className={styles['caloriesBurn']}>Choose some excersices 🏓 below ⬇ </div>}
+    if (props.burnItemsToShow.length===0) {return<div className={styles['caloriesBurn']}>Choose some excersices <span role="img" aria-label="Table Tennis Paddle and Ball">🏓</span> below ⬇ </div>}
 
     const burnAvatarContent = props.burnItemsToShow.map((singleItem, mapIndex) => 
         <CaloriesBurnAvatar
