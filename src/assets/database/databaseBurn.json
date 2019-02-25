@@ -1,0 +1,58 @@
+[
+  {
+    "name": "work",
+    "calories": 820,
+    "description": "8h office job",
+    "icon": "💼",
+    "img": "work"
+  },
+  {
+    "name": "walking",
+    "calories": 267,
+    "description": "1h walking",
+    "icon": "👟",
+    "img": "walking"
+  },
+  {
+    "name": "gaming",
+    "calories": 81,
+    "description": "1h playing videogame (hard-level)",
+    "icon": "🎮",
+    "img": "gaming"
+  },
+  {
+    "name": "dogtrekking",
+    "calories": 267,
+    "description": "1h dogtrekking",
+    "icon": "🐺",
+    "img": "dogtrekking"
+  },
+  {
+    "name": "jogging",
+    "calories": 773,
+    "description": "1h jogging",
+    "icon": "🏃",
+    "img": "jogging"
+  },
+  {
+    "name": "biking",
+    "calories": 596,
+    "description": "1h riding bike",
+    "icon": "🚴‍",
+    "img": "biking"
+  },
+  {
+    "name": "football",
+    "calories": 494,
+    "description": "1h hard football game",
+    "icon": "⚽",
+    "img": "football"
+  },
+  {
+    "name": "swimming",
+    "calories": 492,
+    "description": "1h swiming",
+    "icon": "🏊‍",
+    "img": "swimming"
+  }
+]

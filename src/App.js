@@ -1,173 +1,179 @@
 import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import NavBar from './components/NavBar/NavBar'
+import NavBar from './components/NavBar/NavBar';
 
-import Comparsion from './components/Comparsion/Comparsion'
-import Panel from './components/Panel/Panel'
+import Comparsion from './components/Comparsion/Comparsion';
+import Panel from './components/Panel/Panel';
 
+import localDatabaseIntake from './assets/database/databaseIntake.json';
+import localDatabaseBurn from './assets/database/databaseBurn.json';
 
 const styles = theme => ({
   footer: {
     backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing.unit * 6,
-  },
+    padding: theme.spacing.unit * 6
+  }
 });
 
 class App extends Component {
-  
   componentDidUpdate(prevState) {
     // if (prevState.caloriesIntakeSum !== this.state.caloriesIntakeSum)
     //  {this.setVerdictHandler()}
   }
 
-
   state = {
-    intakeItems: [
-      {name: 'breakfast',calories: 350,description: '200g classic breakfast',icon: '🥐',img: 'breakfast'},
-      {name: 'coffee', calories: 196,description: '250ml coffee with milk & sugar',icon: '☕',img: 'coffee'},
-      {name: 'snack',calories: 500,description: '100g favorite snack',icon: '🍰',img: 'snack'},
-      {name: 'apple',calories: 72,description: '1 juicy apple',icon: '🍏',img: 'apple'},
-      {name: 'lunch',calories: 788,description: '300g classic lunch',icon: '🥗',img: 'lunch'},
-      {name: 'banana',calories: 102,description: '1 average banana',icon: '🍌',img: 'banana'},
-      {name: 'hotdog',calories: 289,description: '1 looking good hotdog',icon: '🌭',img: 'hotdog'},
-      {name: 'dinner',calories: 788,description: '300g classic dinner',icon: '🍲',img: 'dinner'},],
-    burnItems: [
-      {name: 'work',calories: 820,description: '8h office job',icon: '💼',img: 'work'},
-      {name: 'walking',calories: 267,description: '1h walking',icon: '👟',img: 'walking'},
-      {name: 'gaming',calories: 81,description: '1h playing videogame (hard-level)',icon: '🎮',img: 'gaming'},
-      {name: 'dogtrekking',calories: 267,description: '1h dogtrekking',icon: '🐺',img: 'dogtrekking'},
-      {name: 'jogging',calories: 773,description: '1h jogging',icon: '🏃',img: 'jogging'},
-      {name: 'biking',calories: 596,description: '1h riding bike',icon: '🚴‍',img: 'biking'},
-      {name: 'football',calories: 494,description: '1h hard football game',icon: '⚽',img: 'football'},
-      {name: 'swimming',calories: 492,description: '1h swiming',icon: '🏊‍',img: 'swimming'}],
-      intakeItemsToShow: [],
-      burnItemsToShow:[],
-      caloriesIntakeSum: 0,
-      caloriesBurnSum: 0,
-      verdict: '[*TIP] Go ahead, eat some snack 🍩 by clicking ADD below'
-  }
+    intakeItems: localDatabaseIntake,
+    burnItems: localDatabaseBurn,
+    intakeItemsToShow: [],
+    burnItemsToShow: [],
+    caloriesIntakeSum: 0,
+    caloriesBurnSum: 0,
+    verdict: '[*TIP] Go ahead, eat some snack 🍩 by clicking ADD below'
+  };
 
-  
-
-// gets data from clicked element
+  // gets data from clicked element
   clickIntakeItemHandler = (name, calories, uniqueName) => {
     if (this.state.caloriesIntakeSum >= 6000) {
-      return
+      return;
     }
-    this.addIntakeItemsToShow(name)
-    this.setState(prevState => {
-      return { caloriesIntakeSum: prevState.caloriesIntakeSum+calories }
-    },() => this.setVerdictHandler())
-    
-  }
-// adding data to array of items to show + uniqueNane based on current time
-  addIntakeItemsToShow = (name) => {
-    const itemsToAdd = JSON.parse(JSON.stringify(this.state.intakeItems)).filter((singleItem) => {
+    this.addIntakeItemsToShow(name);
+    this.setState(
+      prevState => {
+        return { caloriesIntakeSum: prevState.caloriesIntakeSum + calories };
+      },
+      () => this.setVerdictHandler()
+    );
+  };
+  // adding data to array of items to show + uniqueNane based on current time
+  addIntakeItemsToShow = name => {
+    const itemsToAdd = JSON.parse(
+      JSON.stringify(this.state.intakeItems)
+    ).filter(singleItem => {
       return singleItem.name === name;
-    })
-    itemsToAdd[0]['uniqueName'] = Date.now()
+    });
+    itemsToAdd[0]['uniqueName'] = Date.now();
     this.setState(prevState => {
-      const intakeItemsToShow = prevState.intakeItemsToShow.concat(itemsToAdd[0]);
+      const intakeItemsToShow = prevState.intakeItemsToShow.concat(
+        itemsToAdd[0]
+      );
       return {
-        intakeItemsToShow,
+        intakeItemsToShow
       };
-    })
-  }
-
-
+    });
+  };
 
   // gets data from clicked element
   clickBurnItemsHandler = (name, calories, uniqueName) => {
     if (this.state.caloriesBurnSum >= 6000) {
-      console.log(this.state.caloriesBurnSum)
-      return
+      console.log(this.state.caloriesBurnSum);
+      return;
     }
-    this.addBurnItemsToShow(name)   
-    this.setState(prevState => {
-      return { caloriesBurnSum: prevState.caloriesBurnSum+calories }
-    },() => this.setVerdictHandler())
-  }
-// adding data to array of items to show + uniqueNane based on current time
-  addBurnItemsToShow = (name) => {
-    const itemsToAdd = JSON.parse(JSON.stringify(this.state.burnItems)).filter((singleItem) => {
-      return singleItem.name === name;
-    })    
-    itemsToAdd[0]['uniqueName'] = Date.now()
+    this.addBurnItemsToShow(name);
+    this.setState(
+      prevState => {
+        return { caloriesBurnSum: prevState.caloriesBurnSum + calories };
+      },
+      () => this.setVerdictHandler()
+    );
+  };
+  // adding data to array of items to show + uniqueNane based on current time
+  addBurnItemsToShow = name => {
+    const itemsToAdd = JSON.parse(JSON.stringify(this.state.burnItems)).filter(
+      singleItem => {
+        return singleItem.name === name;
+      }
+    );
+    itemsToAdd[0]['uniqueName'] = Date.now();
     this.setState(prevState => {
       const burnItemsToShow = prevState.burnItemsToShow.concat(itemsToAdd[0]);
       return {
-        burnItemsToShow,
-      }
-    })
-  }
+        burnItemsToShow
+      };
+    });
+  };
 
-// gets data from clicked element
+  // gets data from clicked element
   clickShowedIntakeItemHandler = (uniqueName, calories) => {
-    this.removeIntakeItemsToShow(uniqueName)
-    this.setState(prevState => {
-      return { caloriesIntakeSum: prevState.caloriesIntakeSum-calories }
-    },() => this.setVerdictHandler())
-  }
-// removing data from array of items to show
-  removeIntakeItemsToShow = (uniqueName) => {
-    const itemsToLeave = JSON.parse(JSON.stringify(this.state.intakeItemsToShow)).filter((singleItem) => {
+    this.removeIntakeItemsToShow(uniqueName);
+    this.setState(
+      prevState => {
+        return { caloriesIntakeSum: prevState.caloriesIntakeSum - calories };
+      },
+      () => this.setVerdictHandler()
+    );
+  };
+  // removing data from array of items to show
+  removeIntakeItemsToShow = uniqueName => {
+    const itemsToLeave = JSON.parse(
+      JSON.stringify(this.state.intakeItemsToShow)
+    ).filter(singleItem => {
       return singleItem.uniqueName !== uniqueName;
-    })
-    this.setState({intakeItemsToShow: itemsToLeave})
-  }
+    });
+    this.setState({ intakeItemsToShow: itemsToLeave });
+  };
 
-// gets data from clicked element
+  // gets data from clicked element
   clickShowedBurnItemsHandler = (uniqueName, calories) => {
-    this.removeBurnItemsToShow(uniqueName)
+    this.removeBurnItemsToShow(uniqueName);
     this.setState(prevState => {
-      return { caloriesBurnSum: prevState.caloriesBurnSum-calories }
-    })
-
-  }
-  removeBurnItemsToShow = (uniqueName) => {
-    const itemsToLeave = JSON.parse(JSON.stringify(this.state.burnItemsToShow)).filter((singleItem) => {
+      return { caloriesBurnSum: prevState.caloriesBurnSum - calories };
+    });
+  };
+  removeBurnItemsToShow = uniqueName => {
+    const itemsToLeave = JSON.parse(
+      JSON.stringify(this.state.burnItemsToShow)
+    ).filter(singleItem => {
       return singleItem.uniqueName !== uniqueName;
-    })
-    this.setState({burnItemsToShow: itemsToLeave},() => this.setVerdictHandler())
-  }
+    });
+    this.setState({ burnItemsToShow: itemsToLeave }, () =>
+      this.setVerdictHandler()
+    );
+  };
 
   setVerdictHandler = () => {
-
     if (this.state.caloriesIntakeSum >= 6000) {
-      this.setState({verdict: 'calories intake above reasonable limits'})
-      return
+      this.setState({ verdict: 'calories intake above reasonable limits' });
+      return;
     }
     if (this.state.caloriesBurnSum >= 6000) {
-      this.setState({verdict: 'calories burn above reasonable limits'})
-      return
+      this.setState({ verdict: 'calories burn above reasonable limits' });
+      return;
     }
     if (this.state.caloriesIntakeSum > this.state.caloriesBurnSum) {
-      this.setState({verdict: `you ate ${this.state.caloriesIntakeSum-this.state.caloriesBurnSum}kCal too many. Consider some activity 🏸`})
-      } else if (this.state.caloriesIntakeSum < this.state.caloriesBurnSum) {
-        this.setState({verdict: `you ate ${this.state.caloriesBurnSum-this.state.caloriesIntakeSum}kCal too few! Refill deficit 🌭`})
-        } else 
-          this.setState({verdict: 'Perfect! Go ahead, eat some cookie 🍩'})
-  }
+      this.setState({
+        verdict: `you ate ${this.state.caloriesIntakeSum -
+          this.state.caloriesBurnSum}kCal too many. Consider some activity 🏸`
+      });
+    } else if (this.state.caloriesIntakeSum < this.state.caloriesBurnSum) {
+      this.setState({
+        verdict: `you ate ${this.state.caloriesBurnSum -
+          this.state.caloriesIntakeSum}kCal too few! Refill deficit 🌭`
+      });
+    } else this.setState({ verdict: 'Perfect! Go ahead, eat some cookie 🍩' });
+  };
 
   clearStateHandler = () => {
-    this.setState({intakeItemsToShow: [], burnItemsToShow:[], caloriesIntakeSum: 0, caloriesBurnSum: 0, verdict: '[*TIP] Go ahead, eat some snack 🍩 by clicking ADD below'})
-  }
+    this.setState({
+      intakeItemsToShow: [],
+      burnItemsToShow: [],
+      caloriesIntakeSum: 0,
+      caloriesBurnSum: 0,
+      verdict: '[*TIP] Go ahead, eat some snack 🍩 by clicking ADD below'
+    });
+  };
 
   render() {
-    
     return (
       <div>
-        <NavBar
-          clickClear={this.clearStateHandler}
-          />
+        <NavBar clickClear={this.clearStateHandler} />
         <Comparsion
           intakeItemsToShow={this.state.intakeItemsToShow}
           burnItemsToShow={this.state.burnItemsToShow}
           clickShowedIntakeItem={this.clickShowedIntakeItemHandler}
           clickShowedBurnItem={this.clickShowedBurnItemsHandler}
           verdict={this.state.verdict}
-          />
+        />
         <Panel
           intakeItems={this.state.intakeItems}
           burnItems={this.state.burnItems}
@@ -175,13 +181,20 @@ class App extends Component {
           clickBurnItem={this.clickBurnItemsHandler}
           caloriesIntakeSum={this.state.caloriesIntakeSum}
           caloriesBurnSum={this.state.caloriesBurnSum}
-          />
+        />
         <footer className={this.props.classes.footer}>
           <Typography variant="h6" align="center" gutterBottom>
             CaloriesApp (alpha)
           </Typography>
-          <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-            This Intake&Burn calories App was designed, developed and produced by a multicultural team of various beliefs, sexual orientations and gender identities.
+          <Typography
+            variant="subtitle1"
+            align="center"
+            color="textSecondary"
+            component="p"
+          >
+            This Intake&Burn calories App was designed, developed and produced
+            by a multicultural team of various beliefs, sexual orientations and
+            gender identities.
           </Typography>
         </footer>
       </div>

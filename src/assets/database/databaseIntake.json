@@ -1,0 +1,58 @@
+[
+  {
+    "name": "breakfast",
+    "calories": 350,
+    "description": "200g classic breakfast",
+    "icon": "🥐",
+    "img": "breakfast"
+  },
+  {
+    "name": "coffee",
+    "calories": 196,
+    "description": "250ml coffee with milk & sugar",
+    "icon": "☕",
+    "img": "coffee"
+  },
+  {
+    "name": "snack",
+    "calories": 500,
+    "description": "100g favorite snack",
+    "icon": "🍰",
+    "img": "snack"
+  },
+  {
+    "name": "apple",
+    "calories": 72,
+    "description": "1 juicy apple",
+    "icon": "🍏",
+    "img": "apple"
+  },
+  {
+    "name": "lunch",
+    "calories": 788,
+    "description": "300g classic lunch",
+    "icon": "🥗",
+    "img": "lunch"
+  },
+  {
+    "name": "banana",
+    "calories": 102,
+    "description": "1 average banana",
+    "icon": "🍌",
+    "img": "banana"
+  },
+  {
+    "name": "hotdog",
+    "calories": 289,
+    "description": "1 looking good hotdog",
+    "icon": "🌭",
+    "img": "hotdog"
+  },
+  {
+    "name": "dinner",
+    "calories": 788,
+    "description": "300g classic dinner",
+    "icon": "🍲",
+    "img": "dinner"
+  }
+]
