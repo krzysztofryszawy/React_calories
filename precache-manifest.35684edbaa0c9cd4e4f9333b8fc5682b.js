@@ -4,12 +4,12 @@ self.__precacheManifest = [
     "url": "/React_calories/static/media/dogtrekking.fdc3ab2b.jpg"
   },
   {
-    "revision": "615b27dcba18d20af650",
-    "url": "/React_calories/static/css/main.87eef53a.chunk.css"
+    "revision": "d00518ca7e6a6dcc011b",
+    "url": "/React_calories/static/css/main.b0f20663.chunk.css"
   },
   {
-    "revision": "1c9b981f09345f987a85",
-    "url": "/React_calories/static/js/1.1c9b981f.chunk.js"
+    "revision": "4e4a87e5e0c45b638e13",
+    "url": "/React_calories/static/js/1.4e4a87e5.chunk.js"
   },
   {
     "revision": "e4b9f720e065323086c4",
@@ -40,8 +40,8 @@ self.__precacheManifest = [
     "url": "/React_calories/static/media/dinner.ee95a330.jpg"
   },
   {
-    "revision": "615b27dcba18d20af650",
-    "url": "/React_calories/static/js/main.615b27dc.chunk.js"
+    "revision": "d00518ca7e6a6dcc011b",
+    "url": "/React_calories/static/js/main.d00518ca.chunk.js"
   },
   {
     "revision": "1384ea9fe73905b423b298ae1b946f7d",
@@ -80,7 +80,7 @@ self.__precacheManifest = [
     "url": "/React_calories/static/media/work.e6ff49f5.jpg"
   },
   {
-    "revision": "6ee19b83ba11702cd980ce3b2ca2cc2d",
+    "revision": "27fab0ff1d13b3ba67a12a09bd7c8080",
     "url": "/React_calories/index.html"
   }
 ];

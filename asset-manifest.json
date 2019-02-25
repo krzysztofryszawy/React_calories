@@ -1,9 +1,9 @@
 {
-  "main.css": "/React_calories/static/css/main.87eef53a.chunk.css",
-  "main.js": "/React_calories/static/js/main.615b27dc.chunk.js",
-  "main.js.map": "/React_calories/static/js/main.615b27dc.chunk.js.map",
-  "static/js/1.1c9b981f.chunk.js": "/React_calories/static/js/1.1c9b981f.chunk.js",
-  "static/js/1.1c9b981f.chunk.js.map": "/React_calories/static/js/1.1c9b981f.chunk.js.map",
+  "main.css": "/React_calories/static/css/main.b0f20663.chunk.css",
+  "main.js": "/React_calories/static/js/main.d00518ca.chunk.js",
+  "main.js.map": "/React_calories/static/js/main.d00518ca.chunk.js.map",
+  "static/js/1.4e4a87e5.chunk.js": "/React_calories/static/js/1.4e4a87e5.chunk.js",
+  "static/js/1.4e4a87e5.chunk.js.map": "/React_calories/static/js/1.4e4a87e5.chunk.js.map",
   "runtime~main.js": "/React_calories/static/js/runtime~main.e4b9f720.js",
   "runtime~main.js.map": "/React_calories/static/js/runtime~main.e4b9f720.js.map",
   "static/media/swimming.jpg": "/React_calories/static/media/swimming.0b87dec8.jpg",
@@ -22,8 +22,8 @@
   "static/media/banana.jpg": "/React_calories/static/media/banana.0dc6b21c.jpg",
   "static/media/walking.jpg": "/React_calories/static/media/walking.9f8b24eb.jpg",
   "static/media/work.jpg": "/React_calories/static/media/work.e6ff49f5.jpg",
-  "static/css/main.87eef53a.chunk.css.map": "/React_calories/static/css/main.87eef53a.chunk.css.map",
+  "static/css/main.b0f20663.chunk.css.map": "/React_calories/static/css/main.b0f20663.chunk.css.map",
   "index.html": "/React_calories/index.html",
-  "precache-manifest.96efe1782f484ddd4a6d83dc257ee91d.js": "/React_calories/precache-manifest.96efe1782f484ddd4a6d83dc257ee91d.js",
+  "precache-manifest.35684edbaa0c9cd4e4f9333b8fc5682b.js": "/React_calories/precache-manifest.35684edbaa0c9cd4e4f9333b8fc5682b.js",
   "service-worker.js": "/React_calories/service-worker.js"
 }
